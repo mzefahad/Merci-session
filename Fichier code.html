@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Remerciement</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: radial-gradient(circle at top, #1a1a2e, #000);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin: 0;
+            text-shadow: 0 0 10px #00f2fe,
+                         0 0 20px #00f2fe,
+                         0 0 40px #4facfe;
+            animation: fadeIn 2s ease, glow 2s infinite alternate;
+        }
+
+        p {
+            margin-top: 15px;
+            font-size: 1.2em;
+            opacity: 0.8;
+            animation: fadeIn 3s ease;
+        }
+
+        button {
+            margin-top: 40px;
+            padding: 15px 30px;
+            font-size: 1em;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 0 10px #00f2fe;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #00f2fe, 0 0 40px #4facfe;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #00f2fe,
+                             0 0 20px #00f2fe;
+            }
+            to {
+                text-shadow: 0 0 20px #4facfe,
+                             0 0 40px #00f2fe,
+                             0 0 60px #4facfe;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Merci beaucoup pour cette session</h1>
+    <p>confectionné par Petrona</p>
+
+    <button onclick="playMusic()">Activer la musique 🎵</button>
+
+    <audio id="music">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function playMusic() {
+            const music = document.getElementById("music");
+            music.play();
+        }
+    </script>
+
+</body>
+</html>
